@@ -1,0 +1,46 @@
+export type UserStats = {
+  sr_total: string;
+  ranked_score_total: string;
+  total_score: string;
+  overall_accuracy: string;
+  play_count: number;
+  play_time_seconds: number;
+  max_combo: number;
+  total_hits: number;
+  total_perfect_plus: number;
+  total_perfect: number;
+  total_great: number;
+  total_ok: number;
+  total_bad: number;
+  total_miss: number;
+  count_grade_d: number;
+  count_grade_c: number;
+  count_grade_b: number;
+  count_grade_a: number;
+  count_grade_s: number;
+  count_grade_s_plus: number;
+  count_grade_ss: number;
+  count_grade_x: number;
+};
+
+export type UserDetail = {
+  id: number;
+  username: string;
+  username_slug: string;
+  steam_id: string;
+  steam_persona_name: string;
+  steam_profile_url: string | null;
+  avatar_url: string | null;
+  account_status: string;
+  country_code: string | null;
+  rank: number | null;
+  country_rank: number | null;
+  groups: number;
+  privileges: number;
+  bio: string | null;
+  created_at: string;
+  updated_at: string;
+  last_login_at: string | null;
+  last_seen_at: string | null;
+  stats: UserStats | null;
+};

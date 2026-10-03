@@ -1,0 +1,38 @@
+.admin-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  font: 22px/1 "Next Bravo", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+.admin-button--normal { min-height: 58px; padding: 10px 16px; }
+.admin-button--small { min-height: 46px; padding: 8px 12px; font-size: 18px; }
+.admin-button--large { min-height: 58px; padding: 10px 16px; font-size: 28px; }
+.admin-button--icon { min-height: 0; padding: 6px 8px; font-size: 18px; }
+.admin-button--purple { --button-hover-background: #312952; background: var(--violet); }
+.admin-button--danger { --button-hover-background: #56132d; background: #8a1946; }
+.admin-button--shadow { box-shadow: 6px 6px 0 #000; }
+.admin-button__icon { display: inline-flex; align-items: center; flex: none; }
+.admin-button__icon svg { display: block; }
+.admin-button:disabled,
+.admin-button[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
+.admin-button-motion { transition: background-color 55ms ease, transform 80ms cubic-bezier(.34, 1.9, .64, 1); }
+.admin-button-motion:hover:not(:disabled):not([aria-disabled="true"]),
+.admin-button-motion.admin-button--active:not(:disabled):not([aria-disabled="true"]) { background: var(--button-hover-background, #312952); transform: translateX(-6px) rotate(-3deg); }
+
+@media (max-width: 760px) {
+  .admin-button--small { min-height: 40px; padding: 8px; font-size: 14px; }
+}
+@media (max-width: 520px) {
+  .admin-button--normal { min-height: 48px; padding: 10px; font-size: 16px; }
+  .admin-button--large { min-height: 48px; padding: 7px 10px; font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .admin-button-motion { transition: none; }
+  .admin-button-motion:hover:not(:disabled):not([aria-disabled="true"]),
+  .admin-button-motion.admin-button--active:not(:disabled):not([aria-disabled="true"]) { transform: none; }
+}
